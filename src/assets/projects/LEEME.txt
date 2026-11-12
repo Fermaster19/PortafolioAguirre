@@ -1,0 +1,10 @@
+Capturas reales de los proyectos
+================================
+Copiá acá las capturas con estos nombres exactos (png, jpg o webp):
+
+  manos-conectadas.png   ->  tarjeta de "Manos Conectadas"
+  autoquote-mvp.png      ->  tarjeta de "AutoQuote MVP"
+
+No hace falta tocar el código: el portfolio las detecta solo al
+compilar (npm run dev / npm run build). Mientras no existan, las
+tarjetas muestran un espacio marcado como "Captura pendiente".
