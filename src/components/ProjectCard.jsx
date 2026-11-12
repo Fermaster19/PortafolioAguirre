@@ -1,19 +1,22 @@
 import { ExternalLink, Check } from 'lucide-react'
 import { FaGithub } from 'react-icons/fa6'
-import ProjectShot from './ProjectShot'
+import ProjectShot, { hasProjectShot } from './ProjectShot'
 import Badge from './Badge'
 import Reveal from './Reveal'
 
 export default function ProjectCard({ project, flip, featured }) {
   const { name, category, description, problemTitle, problem, features, tech, projectUrl, repoUrl, note } = project
+  const hasShot = hasProjectShot(project.slug)
   return (
     <Reveal as="article">
-      <div className={`glass glow-hover grid gap-8 rounded-3xl p-5 sm:p-8 lg:grid-cols-2 lg:items-start lg:gap-10 ${featured ? 'shadow-[0_30px_80px_-40px_rgba(8,123,255,0.6)]' : ''}`}>
-        <div className={`lg:sticky lg:top-24 ${flip ? 'lg:order-2' : ''}`}>
-          <ProjectShot project={project} />
-        </div>
+      <div className={`glass glow-hover grid gap-8 rounded-3xl p-5 sm:p-8 ${hasShot ? 'lg:grid-cols-2 lg:items-start lg:gap-10' : ''} ${featured ? 'shadow-[0_30px_80px_-40px_rgba(8,123,255,0.6)]' : ''}`}>
+        {hasShot && (
+          <div className={`lg:sticky lg:top-24 ${flip ? 'lg:order-2' : ''}`}>
+            <ProjectShot project={project} />
+          </div>
+        )}
 
-        <div className={flip ? 'lg:order-1' : ''}>
+        <div className={hasShot && flip ? 'lg:order-1' : ''}>
           {featured && (
             <p className="mb-3 inline-block rounded-full border border-sky/40 bg-sky/10 px-3 py-1 text-xs font-medium text-sky">Proyecto principal</p>
           )}

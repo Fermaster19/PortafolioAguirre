@@ -6,5 +6,5 @@ Copiá acá las capturas con estos nombres exactos (png, jpg o webp):
   autoquote-mvp.png      ->  tarjeta de "AutoQuote MVP"
 
 No hace falta tocar el código: el portfolio las detecta solo al
-compilar (npm run dev / npm run build). Mientras no existan, las
-tarjetas muestran un espacio marcado como "Captura pendiente".
+compilar (npm run dev / npm run build). Si no hay una captura para un
+proyecto, la tarjeta se muestra sin el espacio de imagen.
